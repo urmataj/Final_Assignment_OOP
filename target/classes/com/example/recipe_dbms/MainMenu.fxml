@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="797.0" style="-fx-background-color: #fceceb;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipe_dbms.HelloController">
+   <children>
+      <Label layoutX="197.0" layoutY="27.0" prefHeight="48.0" prefWidth="267.0" text="Recipe Management System" textFill="#b50505">
+         <font>
+            <Font name="Rockwell" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchInput" layoutX="44.0" layoutY="95.0" prefHeight="27.0" prefWidth="730.0" promptText="Keywords..." />
+      <MenuBar layoutX="-1.0" layoutY="2.0" prefHeight="25.0" prefWidth="776.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="More">
+            <items>
+              <MenuItem mnemonicParsing="false" text="User list" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToCreateRecipe" text="Create recipe" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Registration">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#goToLogin" text="Login" />
+               </items>
+          </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuBar>
+      <Label layoutX="195.0" layoutY="392.0" prefHeight="72.0" prefWidth="363.0" text="Discover new recipes to try out today!&#10;">
+         <font>
+            <Font name="Rockwell Extra Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="description" layoutX="23.0" layoutY="301.0" prefHeight="91.0" prefWidth="730.0" text="To find the recipes by keywords:&#10;1. Write one or two ingredients that should be in the recipe;&#10;2. Write &quot;Yes&quot; if you'd like a vegetarian dish, otherwise - &quot;No&quot; ;&#10;3. If you'd like the dish of a certain cuisine, write the name of the country;&#10;4. You can write what type of the dish you want.">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="75.0" text="Search for recipes:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="recipeTableView" layoutX="22.0" layoutY="133.0" prefHeight="168.0" prefWidth="752.0">
+        <columns>
+          <TableColumn fx:id="titleColumnName" prefWidth="105.0" text="Title" />
+          <TableColumn fx:id="typeColumnName" prefWidth="55.0" text="Type" />
+            <TableColumn fx:id="timeColumnName" prefWidth="40.0" text="Time" />
+            <TableColumn fx:id="ingColumnName" prefWidth="100.0" text="Ingredients" />
+            <TableColumn fx:id="descColumnName" minWidth="0.0" prefWidth="233.0" text="Description" />
+            <TableColumn fx:id="isVegColumnName" prefWidth="37.0" text="Veg" />
+            <TableColumn fx:id="regionColumnName" prefWidth="59.0" text="Region" />
+            <TableColumn fx:id="userColumnName" prefWidth="52.0" text="User" />
+            <TableColumn fx:id="buttonColumn" maxWidth="85.0" prefWidth="70.0" text="More" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
